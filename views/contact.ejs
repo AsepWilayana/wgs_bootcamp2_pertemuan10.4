@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <h1>Contact List</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (cont < 1) {%>
+      <tr>
+        <td colspan="4">data kosong</td>
+      </tr>
+      <% } else {%> <% for (let index=0; index < cont.length; index++) { %>
+      <tr>
+        <td scope="row"><%= index+1 %></td>
+        <td><%=cont[index].name %></td>
+        <td><%=cont[index].email %></td>
+        <td>
+          <a
+            type="button"
+            href="contact/<%=cont[index].name %>"
+            class="btn btn-success"
+          >
+            Detail
+          </a>
+        </td>
+      </tr>
+      <% } %> <%}%>
+    </tbody>
+  </table>
+</div>
