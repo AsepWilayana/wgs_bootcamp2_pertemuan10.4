@@ -1,12 +1,35 @@
-<div class="container">
-  <div class="card mt-5 w-75 align-content-center" style="width: 18rem">
-    <div class="card-header text-center">Detail User</div>
+<div class="container mt-5">
+  <h1>Detail User</h1>
+  <div class="card w-75 shadow p-3 mb-5 bg-body rounded" style="width: 50rem">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Nama : <%= contact.name %></li>
-      <li class="list-group-item">Email : <%= contact.email %></li>
-      <li class="list-group-item">Mobile Phone : <%= contact.mobile %></li>
-    </ul>
+      <li class="list-group-item">
+        <i class="bi bi-person-fill"></i> Nama : <b><%= contact.name %></b>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-envelope-fill"></i> Email : <b><%= contact.email %></b>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-phone-fill"></i> Mobile Phone :
+        <b><%= contact.mobile %></b>
+      </li>
 
-    <a href="/contact" class="btn btn-dark">Kembali</a>
+      <li class="list-group-item">
+        <a href="/update/<%=contact.name %>" class="btn btn-warning">
+          <i class="bi bi-pencil-square"></i> Update
+        </a>
+        <a
+          href="/delete/<%=contact.name %>"
+          onclick="return confirm('yakin?')"
+          class="btn btn-danger"
+        >
+          <i class="bi bi-trash-fill"></i>
+          Delete
+        </a>
+
+        <a href="/contact" class="btn btn-dark"
+          ><i class="bi bi-arrow-left-circle-fill"></i> Kembali</a
+        >
+      </li>
+    </ul>
   </div>
 </div>
